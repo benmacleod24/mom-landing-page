@@ -1,14 +1,14 @@
 export default function AboutMe() {
 	return (
-		<div className="flex flex-col md:flex-row w-full p-6">
-			<div className="drop-shadow w-full md:min-w-80 h-80 rounded-xl overflow-hidden">
+		<div className="flex flex-col lg:flex-row w-full px-6 lg:px-0 py-10">
+			<div className="drop-shadow w-full lg:min-w-80 h-80 rounded-xl overflow-hidden">
 				<img
 					src="https://assets.agentfire3.com/uploads/sites/754/2023/01/137698-e1674493459447.jpeg"
 					className="w-full h-full object-cover object-center"
 				/>
 			</div>
-			<div className="mt-5 md:ml-10">
-				<h1 className="text-xl font-bold text-zinc-700 leading-none">
+			<div className="mt-5 lg:ml-10">
+				<h1 className="text-2xl font-bold text-zinc-700 leading-none">
 					About Me
 				</h1>
 				<p className="text-sm italic text-[#af1f22]">

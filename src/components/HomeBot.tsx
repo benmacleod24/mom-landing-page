@@ -37,5 +37,9 @@ export default function HomebotWidget() {
 		};
 	}, [widgetLoaded, setWidgetLoaded]);
 
-	return <div id="homebot_homeowner"></div>;
+	return (
+		<div className="bg-muted flex justify-center items-center w-full px-6 py-10 lg:p-10 lg:rounded-xl lg:mt-10">
+			<div id="homebot_homeowner"></div>
+		</div>
+	);
 }
