@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import SectionWrapper from "./SectionWrapper";
 
 export default function HomebotWidget() {
 	const [widgetLoaded, setWidgetLoaded] = useState<boolean>(false);
@@ -37,9 +38,5 @@ export default function HomebotWidget() {
 		};
 	}, [widgetLoaded, setWidgetLoaded]);
 
-	return (
-		<div className="bg-muted flex justify-center items-center w-full px-6 py-10 lg:p-10 lg:rounded-xl lg:mt-10">
-			<div id="homebot_homeowner"></div>
-		</div>
-	);
+	return <SectionWrapper className="bg-muted" id="homebot_homeowner" />;
 }
