@@ -4,6 +4,7 @@ import App from "./App.tsx";
 import "@fontsource-variable/inter";
 //@ts-ignore
 import "@fontsource-variable/noto-sans";
+import "./styles/butler.css";
 import "./styles/index.css";
 
 createRoot(document.getElementById("root")!).render(<App />);

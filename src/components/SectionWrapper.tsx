@@ -7,7 +7,10 @@ export default function SectionWrapper(
 	return (
 		<div
 			id={props.id}
-			className={cn("bg-blue-500 md:px-0 p-6", props.className)}
+			className={cn(
+				"md:px-0 p-6 py-10 first:border-t-0 lg:py-20",
+				props.className
+			)}
 		>
 			<div className="w-full md:max-w-6xl mx-auto">{props.children}</div>
 		</div>

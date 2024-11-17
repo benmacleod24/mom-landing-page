@@ -1,0 +1,31 @@
+@font-face {
+	font-family: "Butler";
+	font-style: normal;
+	font-weight: normal;
+	src: local("Butler Regular"),
+		url("../assets/fonts/butler/Butler_Regular.woff") format("woff");
+}
+
+@font-face {
+	font-family: "ButlerM";
+	font-style: normal;
+	font-weight: normal;
+	src: local("Butler Medium"),
+		url("../assets/fonts/butler/Butler_Medium.woff") format("woff");
+}
+
+@font-face {
+	font-family: "ButlerB";
+	font-style: normal;
+	font-weight: normal;
+	src: local("Butler Bold"),
+		url("../assets/fonts/butler/Butler_Bold.woff") format("woff");
+}
+
+.butler-bold {
+	font-family: "ButlerB";
+}
+
+.butler {
+	font-family: "Butler";
+}

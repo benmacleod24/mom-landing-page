@@ -13,10 +13,14 @@ export default function HomebotWidget() {
 		script.src = "https://embed.homebotapp.com/lgw/v1/widget.js";
 
 		// Define the namespace and function
+		//@ts-ignore
 		window.__hb_namespace = "Homebot";
+		//@ts-ignore
 		window.Homebot =
+			//@ts-ignore
 			window.Homebot ||
 			function () {
+				//@ts-ignore
 				(window.Homebot.q = window.Homebot.q || []).push(arguments);
 			};
 
@@ -25,6 +29,7 @@ export default function HomebotWidget() {
 
 		// Initialize the widget after the script loads
 		script.onload = () => {
+			//@ts-ignore
 			window.Homebot(
 				"#homebot_homeowner",
 				"6291960e9561364bc5c12751bcfbef11a4d89233a0a957df"

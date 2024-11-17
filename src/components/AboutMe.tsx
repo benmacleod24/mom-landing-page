@@ -2,7 +2,7 @@ import SectionWrapper from "./SectionWrapper";
 
 export default function AboutMe() {
 	return (
-		<SectionWrapper className="bg-transparent">
+		<SectionWrapper className="bg-transparent" id="about-me">
 			<div className="flex flex-col lg:flex-row">
 				<div className="drop-shadow w-full lg:min-w-80 h-80 rounded-xl overflow-hidden">
 					<img
@@ -11,7 +11,7 @@ export default function AboutMe() {
 					/>
 				</div>
 				<div className="mt-5 lg:ml-10">
-					<h1 className="text-2xl font-bold text-zinc-700 leading-none">
+					<h1 className="text-2xl font-bold butler-bold text-zinc-700 leading-none">
 						About Me
 					</h1>
 					<p className="text-sm italic text-[#af1f22]">
