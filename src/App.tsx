@@ -1,18 +1,16 @@
-import HomebotWidget from "@/components/HomeBot";
-import Header from "@/components/header";
-import AboutMe from "./components/AboutMe";
-import NewConstruction from "@/components/NewConstruction";
 import Footer from "@/components/footer";
 import Hero from "./components/Hero";
+import SellYourHome from "./components/SellYourHome";
+import Services from "./components/Services";
+import BuildYourHome from "./components/BuildYourHome";
 
 function App() {
 	return (
-		<div>
-			<Header />
+		<div className="overflow-x-hidden">
 			<Hero />
-			<AboutMe />
-			<NewConstruction />
-			<HomebotWidget />
+			<SellYourHome />
+			<Services />
+			<BuildYourHome />
 			<Footer />
 		</div>
 	);
