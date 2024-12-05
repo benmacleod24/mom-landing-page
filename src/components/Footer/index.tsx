@@ -45,15 +45,9 @@ export default function Footer() {
 							target="_blank"
 							className="text-zinc-700 hover:text-brand transition-colors"
 						>
-							{formatPhoneNumber(Brokerage.phoneNumber)}
+							Office: {formatPhoneNumber(Brokerage.phoneNumber)}
 						</a>
-						<a
-							href={`mailto:${Brokerage.email}`}
-							target="_blank"
-							className="text-zinc-700 hover:text-brand transition-colors"
-						>
-							{Brokerage.email}
-						</a>
+
 						<p className="text-zinc-700 hover:text-brand transition-colors">
 							{Brokerage.address}
 						</p>
