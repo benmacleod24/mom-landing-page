@@ -1,4 +1,4 @@
-import SectionWrapper from "./SectionWrapper";
+import SectionWrapper from "../SectionWrapper";
 
 export default function AboutMe() {
 	return (

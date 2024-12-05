@@ -12,9 +12,9 @@ export default function SectionWrapper(
 				props.className
 			)}
 		>
-			<div className="w-full md:max-w-6xl mx-auto">{props.children}</div>
+			<section className="w-full md:max-w-6xl mx-auto">
+				{props.children}
+			</section>
 		</div>
 	);
 }
-
-// "bg-blue-500 rounded-xl p-6"
