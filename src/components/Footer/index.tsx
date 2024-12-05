@@ -1,8 +1,8 @@
 import { Brokerage, ContactInfo, Links } from "@/lib/config";
 import { cn, formatPhoneNumber } from "@/lib/utils";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 import { ArrowRight, CircleX, Loader2 } from "lucide-react";
-import { Form } from "./ui/form";
+import { Form } from "../ui/form";
 import { z } from "zod";
 import { isEmail } from "validator";
 import { useForm } from "react-hook-form";
@@ -26,7 +26,7 @@ export default function Footer() {
 	}
 
 	return (
-		<footer className="w-full">
+		<footer className="w-full border-t">
 			<div className="grid lg:grid-cols-2 xl:grid-cols-4 gap-10 px-4 lg:px-0 py-16 w-full h-full lg:max-w-[80%] mx-auto">
 				<div>
 					<a
@@ -69,8 +69,9 @@ export default function Footer() {
 					<div className="flex flex-col">
 						{Links.sort((a, b) =>
 							a.title.localeCompare(b.title)
-						).map((link) => (
+						).map((link, idx) => (
 							<a
+								key={idx}
 								href={link.href}
 								target="_blank"
 								className="text-zinc-700 hover:text-brand transition-colors"
@@ -137,9 +138,15 @@ export default function Footer() {
 									)}
 									placeholder={`example@email.com`}
 								/>
-								{form.getFieldState("email").error && (
-									<CircleX className="text-brand" />
-								)}
+
+								<CircleX
+									className={cn(
+										"text-brand transition-all",
+										form.getFieldState("email").error
+											? "opacity-100"
+											: "opacity-0"
+									)}
+								/>
 							</div>
 							<Button
 								type="submit"

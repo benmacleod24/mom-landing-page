@@ -9,6 +9,10 @@ export const Links = [
 		href: "https://www.simplifyingthemarket.com/en/?a=1000031878-5b8f2ca811dbf5cd9a1289bc84b55fff",
 	},
 	{
+		title: "Vendor List",
+		href: "https://www.vendorl.ink/l/NWqWMpW",
+	},
+	{
 		title: "Facebook",
 		href: "https://www.facebook.com/123soldteam",
 	},
@@ -23,9 +27,5 @@ export const Links = [
 	{
 		title: "LinkedIn",
 		href: "https://www.linkedin.com/in/jennymacleod/",
-	},
-	{
-		title: "Vendor List",
-		href: "https://www.vendorl.ink/l/NWqWMpW",
 	},
 ] satisfies LinkOption[];

@@ -8,7 +8,7 @@ export default function SectionWrapper(
 		<div
 			id={props.id}
 			className={cn(
-				"md:px-0 p-6 py-10 first:border-t-0 lg:py-20",
+				"p-6 py-20 first:border-t-0 lg:py-20",
 				props.className
 			)}
 		>
