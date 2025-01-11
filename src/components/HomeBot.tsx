@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import SectionWrapper from "./SectionWrapper";
 
 export default function HomebotWidget() {
 	const [widgetLoaded, setWidgetLoaded] = useState<boolean>(false);
@@ -42,5 +43,20 @@ export default function HomebotWidget() {
 		};
 	}, [widgetLoaded, setWidgetLoaded]);
 
-	return <div id="homebot_homeowner" className="overflow-hidden" />;
+	return (
+		<div className="text-black py-20" id="homevalue">
+			<SectionWrapper className="py-0 lg:py-0 mb-12">
+				<h1 className="text-4xl font-semibold butler-bold text-brand">
+					Curious About Your Home Value?
+				</h1>
+				<p className="text-muted-foreground max-w-4xl">
+					Discover your home's true market value with a personalized
+					analysis based on recent sales, local trends, and unique
+					features. Enter your address for a complimentary,
+					no-obligation report to help you make informed decisions.
+				</p>
+			</SectionWrapper>
+			<div id="homebot_homeowner" className="overflow-hidden" />
+		</div>
+	);
 }

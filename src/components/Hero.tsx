@@ -1,6 +1,7 @@
 import SectionWrapper from "./SectionWrapper";
 import Background from "@/assets/home_interiorier.jpg";
 import Header from "./Header";
+import { ArrowRight, ExternalLink } from "lucide-react";
 
 const subheader =
 	"Serving Ohio and Michigan with expert guidance in selling, buying, and building homes.";
@@ -26,16 +27,25 @@ export default function Hero() {
 					<h1 className="text-white text-xl my-5">{subheader}</h1>
 					<div className="flex flex-col lg:flex-row gap-5 mt-10">
 						<a
-							href="#sell"
-							className="border rounded-md p-3 text-white hover:bg-muted/20 transition-all text-center"
+							href="#homevalue"
+							className="group border lg:max-w-[15rem] justify-center w-full rounded-md p-3 flex items-center gap-3 text-white hover:bg-muted/20 transition-all text-center"
 						>
-							Learn More About Selling
+							Find Your Home Value{" "}
+							<ArrowRight
+								size={20}
+								className="mt-0.5 group-hover:translate-x-1 transition-all"
+							/>
 						</a>
 						<a
-							href="#build"
-							className="border rounded-md p-3 text-white hover:bg-muted/20 transition-all text-center "
+							href="https://cal.com/jennifer-macleod/consultation"
+							target="_blank"
+							className="group border lg:max-w-[15rem] justify-center w-full rounded-md p-3 flex items-center gap-3 text-white hover:bg-muted/20 transition-all text-center"
 						>
-							Schedule a Consultation
+							Schedule Consultaion{" "}
+							<ExternalLink
+								size={20}
+								className="mt-0.5 group-hover:scale-110 transition-all"
+							/>
 						</a>
 					</div>
 				</SectionWrapper>

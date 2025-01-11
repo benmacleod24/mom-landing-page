@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import * as Portal from "@radix-ui/react-portal";
 import { ContactInfo, NavigationOptions } from "@/lib/config";
 
-export default function MobileNavigation() {
+export default function MobileNavigation(props: { mode?: "light" | "dark" }) {
 	const [animateButton] = useAutoAnimate({ duration: 100 });
 	const [isOpen, setOpen] = useState<boolean>(false);
 
@@ -30,14 +30,13 @@ export default function MobileNavigation() {
 		<div className="z-40">
 			<button
 				ref={animateButton}
-				className="p-2 z-40"
+				className={cn(
+					"p-2 z-40",
+					props.mode === "dark" ? "text-black" : "text-white"
+				)}
 				onClick={toggleOpen}
 			>
-				{isOpen ? (
-					<X className="text-white" size={30} />
-				) : (
-					<Menu className="text-white" size={30} />
-				)}
+				{isOpen ? <X size={30} /> : <Menu size={30} />}
 			</button>
 			<Portal.Root
 				aria-label="mobile-menu"

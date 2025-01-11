@@ -8,6 +8,7 @@ import { isEmail } from "validator";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
+import { Link } from "wouter";
 
 type FormSchema = z.infer<typeof formSchema>;
 const formSchema = z.object({
@@ -22,7 +23,25 @@ export default function Footer() {
 	});
 
 	async function handleSubmit(values: FormSchema) {
-		alert(values.email);
+		const resp = await fetch("https://api.followupboss.com/v1/events", {
+			method: "POST",
+			headers: {
+				accept: "application/json",
+				"content-type": "application/json",
+				authorization:
+					"Basic ZmthXzA5VkpEV0tzU2FhNk0xREsyNUhtb3BqZHZlUTVoQ21MclM6",
+			},
+			body: JSON.stringify({
+				person: {
+					emails: [{ value: values.email }],
+					source: "Personal Website",
+				},
+			}),
+		});
+
+		if (resp.ok) {
+			form.reset();
+		}
 	}
 
 	return (
@@ -109,53 +128,11 @@ export default function Footer() {
 						Stay informed on the latest in real estate—subscribe to
 						my newsletter today!
 					</p>
-
-					<Form {...form}>
-						<form
-							onSubmit={form.handleSubmit(handleSubmit)}
-							className="w-full flex items-center gap-3 mt-5"
-						>
-							<div
-								ref={animateNewletter}
-								className={cn(
-									"w-full h-full border rounded-lg flex items-center pr-2 shadow overflow-hidden",
-									form.getFieldState("email").error &&
-										"ring-1 ring-brand"
-								)}
-							>
-								<input
-									{...form.register("email")}
-									autoComplete="email"
-									id="email"
-									className={cn(
-										" p-2 focus-visible:outline-none w-full"
-									)}
-									placeholder={`example@email.com`}
-								/>
-
-								<CircleX
-									className={cn(
-										"text-brand transition-all",
-										form.getFieldState("email").error
-											? "opacity-100"
-											: "opacity-0"
-									)}
-								/>
-							</div>
-							<Button
-								type="submit"
-								disabled={form.formState.isSubmitting}
-								className="bg-brand hover:bg-brand/90"
-							>
-								Join!{" "}
-								{form.formState.isSubmitting ? (
-									<Loader2 className="animate-spin" />
-								) : (
-									<ArrowRight />
-								)}
-							</Button>
-						</form>
-					</Form>
+					<Link href="/newsletter">
+						<Button className="w-full bg-brand hover:bg-brand/80 mt-3">
+							Join Newsletter! <ArrowRight />
+						</Button>
+					</Link>
 				</div>
 			</div>
 		</footer>
